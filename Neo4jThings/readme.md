@@ -1,6 +1,16 @@
 # IoT Data Modelling using Neo4j Graph Database
 
+## Inspiration and Acknowledgments
 
+This tutorial and the concepts discussed herein draw significantly from Mr. Mamun's article on Medium titled ["IoT Data Modeling in Neo4j Graph DB"](https://medium.com/@muntasirjoarder/iot-data-modeling-in-neo4j-graph-db-f5b57f377614). The article provides a foundational understanding of how graph databases can efficiently manage and visualize IoT data, highlighting the advantages of Neo4j for such applications.
+
+Additionally, we have utilized resources and examples from Mr. Mamun's GitHub repository [NeoThings](https://github.com/muntasirjoarder/NeoThings), which offers practical implementations and further insights into the integration of Neo4j within IoT systems. 
+
+## Objective of This Tutorial
+
+The primary goal of this tutorial is to demonstrate how to create a simple but effective IoT data model in Neo4j. We will guide you through setting up your environment, creating nodes and relationships, and executing queries that reveal insightful patterns and connections in IoT data. Whether you are new to Neo4j or looking to expand your knowledge in graph databases with a focus on IoT applications, this tutorial is designed to provide a clear and practical approach to IoT data modeling.
+
+We extend our gratitude to Mr. Muntasir Mamun for his pioneering work and for providing the community with valuable resources that serve as the basis for this tutorial. Let's embark on this learning journey to explore the dynamic capabilities of Neo4j in the world of IoT.
 
 Here, we have ten(10) types of **nodes**. They are:
 
@@ -30,6 +40,7 @@ Also we have ten(10) edges (ie. Relationships). They are:
 ## Steps to create Things Neo4j Database
 
 1. The CSV files for **nodes** and **edges** are already created. You can just copy the Cypher queries and execute in order which will then create our IoT Graph Data Model in Neo4j Sandbox.
+
 2. **Things**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/things.csv" AS csvLine
@@ -87,12 +98,26 @@ match (from {id:rels.thingId}), (to {id: rels.entityid})
 CALL apoc.create.relationship(from, rels.relationshipname,apoc.convert.fromJsonMap(rels.prop), to) YIELD rel 
 RETURN count(*)
 ```
+
+
 13. **See how it looks**
 
 Execute
 ```sh
 MATCH (n) RETURN n
 ```
-If all the steps are completed properly then the Graph should look like:
-![IoT Graph DB](https://emergingtechs.net/wp-content/uploads/2019/05/everything-1.png)
+![Graph Visualization](images/neothings.png)
 
+
+14. **Cypher Queries on IoT Data**
+- **Show everything connected to Thing08:**
+    ```cypher
+    MATCH (n:Thing {id:"Thing08"})-[r]->(a) return n,r,a
+
+- **Return all the departments which will get affected in case Thing08 is disconnected:**
+    ```cypher
+    MATCH (n:Thing {id: "Thing08"})-[r]-(a:Application)-[u:IS_USED_BY]->(d:Department) return *
+
+- **Return all the Battery powered Things with the expected end date of their battery life:**
+    ```cypher
+    MATCH (n:Thing)-[r:IS_POWERED_BY]->(p:Power {id:"battery"}) return n.id as ThingId, n.lat as Lat, n.lon as Lon, apoc.date.format(r.lifefinish, 's', 'MM/dd/yyyy') as ExpectedBatteryFinish
