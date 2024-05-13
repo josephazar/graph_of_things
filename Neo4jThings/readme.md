@@ -32,57 +32,57 @@ Also we have ten(10) edges (ie. Relationships). They are:
 1. The CSV files for **nodes** and **edges** are already created. You can just copy the Cypher queries and execute in order which will then create our IoT Graph Data Model in Neo4j Sandbox.
 2. **Things**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/things.csv" AS csvLine
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/things.csv" AS csvLine
 CREATE (`csvLine.id`:Thing {id: csvLine.id, name: csvLine.name, lat: csvLine.lat, lon: csvLine.lon })
 ```
 3. **Applications**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/applications.csv" AS csvLine
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/applications.csv" AS csvLine
 CREATE (`csvLine.id`:Application{id: csvLine.id, name: csvLine.name})
 ```
 4. **Manufacturers**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/manufacturers.csv" AS csvLine
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/manufacturers.csv" AS csvLine
 CREATE (`csvLine.id`:Manufacturer {id: csvLine.id, name: csvLine.name})
 ```
 5. **Modules**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/module.csv" AS csvLine
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/module.csv" AS csvLine
 CREATE (`csvLine.id`:Module {id: csvLine.id, name: csvLine.name})
 ```
 6. **Networks**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/network.csv" AS csvLine
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/network.csv" AS csvLine
 CREATE (`csvLine.id`:Network {id: csvLine.id, name: csvLine.name})
 ```
 7. **Power Sources**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/power.csv" AS csvLine
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/power.csv" AS csvLine
 CREATE (`csvLine.id`:Power {id: csvLine.id, name: csvLine.name})
 ```
 8. **Sensors**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/sensors.csv" AS csvLine
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/sensors.csv" AS csvLine
 CREATE (`csvLine.id`:Sensor {id: csvLine.id, name: csvLine.name})
 ```
 9. **Thing Types**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/thingtype.csv" AS csvLine
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/thingtype.csv" AS csvLine
 CREATE (`csvLine.id`:Thingtype {id: csvLine.id, name: csvLine.name})
 ```
 10. **Vendors**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/vendors.csv" AS csvLine
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/vendors.csv" AS csvLine
 CREATE (`csvLine.id`:Vendor {id: csvLine.id, name: csvLine.name})
 ```
 11. **Departments**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/departments.csv" AS csvLine
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/departments.csv" AS csvLine
 CREATE (`csvLine.id`:Department {id: csvLine.id, name: csvLine.name})
 ```
 12. **Create Edges**
 ```sh
-LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/muntasirjoarder/NeoThings/master/relation.csv" AS rels
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/relation.csv" AS rels
 match (from {id:rels.thingId}), (to {id: rels.entityid})
 CALL apoc.create.relationship(from, rels.relationshipname,apoc.convert.fromJsonMap(rels.prop), to) YIELD rel 
 RETURN count(*)
