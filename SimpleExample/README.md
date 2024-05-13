@@ -15,11 +15,11 @@ In this example, we will create a simple graph representing a `Person` who owns 
 
 We will begin by creating a `Person` node and a `Vehicle` node, and a relationship `OWNS` between them. Each node and relationship will have properties that describe them further.
 
-### Cypher Query
+- **Cypher query:**
+    ```cypher
+    CREATE (p:Person {name: "Jane"})-[:OWNS {since: 2018}]->(v:Vehicle {type: "Bike", make: "Specialized", model: "Crux Pro"})
+    RETURN p, v
 
-```cypher
-CREATE (p:Person {name: "Jane"})-[:OWNS {since: 2018}]->(v:Vehicle {type: "Bike", make: "Specialized", model: "Crux Pro"})
-RETURN p, v
 
 This query does the following:
 - **`CREATE`**: Initializes the nodes and relationship.
