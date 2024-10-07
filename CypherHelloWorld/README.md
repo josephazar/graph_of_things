@@ -47,7 +47,7 @@ RETURN n.name
 ```
 
 ### Explication :
-- `MATCH (n)-[:KNOWS]->(Neo {name: 'Neo'})` trouve tous les nœuds qui connaissent Neo via la relation **KNOWS**.
+- `MATCH (n)-[:KNOWS]->(Morpheus {name: 'Morpheus'})` trouve tous les nœuds qui connaissent Neo via la relation **KNOWS**.
 - `RETURN n.name` renvoie les noms des personnages qui connaissent Neo.
 
 ---
