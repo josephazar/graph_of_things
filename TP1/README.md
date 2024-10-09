@@ -26,6 +26,19 @@ La bougie d'allumage, une pièce en céramique, est placée à l'intérieur du c
 
 Le moteur comporte aussi un injecteur, fabriqué en acier, qui permet d’introduire le carburant sous pression dans les cylindres. Les mouvements des soupapes sont quant à eux contrôlés par un arbre à cames, fabriqué en acier, qui coordonne l'ouverture et la fermeture des soupapes pour optimiser le flux d'air et l'évacuation des gaz.
 
+### Engine Description:
+The engine you will model consists of several components that interact with each other to convert thermal energy into mechanical energy.
+
+The piston, made of steel, is a key component of the engine. It is directly connected to the crankshaft, which is responsible for converting the linear motion of the pistons into rotational motion. The crankshaft, made of iron, is located at the heart of the engine.
+
+The engine also has two valves, made of aluminum: an intake valve, which controls the flow of the air-fuel mixture into the cylinders, and an exhaust valve, which allows the burned gases to exit the cylinders after combustion.
+
+The cylinders, made of steel, contain the motion of the pistons and are directly connected to the engine block, which forms the main structure of the engine. The engine block, made of cast iron, serves as the supporting element for the entire engine.
+
+The spark plug, a ceramic component, is placed inside the cylinder to generate the spark necessary for igniting the air-fuel mixture.
+
+The engine also includes an injector, made of steel, which introduces fuel under pressure into the cylinders. The movements of the valves are controlled by a camshaft, made of steel, which coordinates the opening and closing of the valves to optimize airflow and gas exhaust.
+
 ### À partir de cette description, vous devez extraire et modéliser :
 
 - Les pièces du moteur (les nœuds).
