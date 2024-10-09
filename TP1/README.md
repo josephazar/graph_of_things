@@ -47,8 +47,9 @@ Le moteur comporte aussi un injecteur, fabriqué en acier, qui permet d’introd
 10. Trouver le chemin le plus court entre le piston et le bloc moteur.
 11. Lister tous les composants en fonction de leur matériau.
 12. Trouver le chemin le plus long entre deux composants.
-13. Lister toutes les pièces faisant partie de sous-systèmes spécifiques (comme le cylindre ou la culasse).
-
+13. Lister toutes les pièces connectées au cylindre ou à la culasse.
+14. Assurez que la bougie d'allumage est placée dans le cylindre sans créer de doublons.
+15. Assurez que l'injecteur alimente en carburant le cylindre sans créer de doublons.
 
 | Nom du mot-clé | Description | Quand l'utiliser | Exemple |
 |----------------|-------------|------------------|---------|
