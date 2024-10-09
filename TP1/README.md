@@ -3,7 +3,7 @@
 
 Bienvenue à ce TP sur la **modélisation des connaissances appliquée à l'ingénierie mécanique** avec Neo4J !
 
-Dans ce TP, vous allez modéliser un **moteur** en utilisant une base de données graphique. Nous allons explorer comment représenter les **composants mécaniques** et leurs **interactions** sous forme de graphe. Vous allez définir des nœuds (pièces) et des relations (connexions entre ces pièces) en partant d'une description que nous vous donnons. Ensuite, vous serez invités à construire un fichier CSV représentant ces composants et relations, que nous utiliserons dans Neo4J pour exécuter des requêtes et explorer les relations entre les éléments.
+Dans ce TP, vous allez modéliser un **moteur** en utilisant une base de données graphique. Nous allons explorer comment représenter les **composants mécaniques** et leurs **interactions** sous forme de graphe. Vous allez définir des nœuds (pièces) et des relations (connexions entre ces pièces) en partant d'une description que nous vous donnons. Ensuite, vous serez invités à construire un fichier CSV/EXCEL représentant ces composants et relations, que nous utiliserons dans Neo4J pour exécuter des requêtes et explorer les relations entre les éléments.
 
 ## Objectif :
 D'ici la fin de cette session, vous serez capables de :
@@ -29,7 +29,7 @@ Le moteur comporte aussi un injecteur, fabriqué en acier, qui permet d’introd
 ### À partir de cette description, vous devez extraire et modéliser :
 
 - Les pièces du moteur (les nœuds).
-- Les relations entre les pièces
+- Les relations entre les pièces.
 
 ---
 
@@ -48,3 +48,17 @@ Le moteur comporte aussi un injecteur, fabriqué en acier, qui permet d’introd
 11. Lister tous les composants en fonction de leur matériau.
 12. Trouver le chemin le plus long entre deux composants.
 13. Lister toutes les pièces faisant partie de sous-systèmes spécifiques (comme le cylindre ou la culasse).
+
+
+| Nom du mot-clé | Description | Quand l'utiliser | Exemple |
+|----------------|-------------|------------------|---------|
+| MATCH          | Utilisé pour trouver des motifs dans la base de données. | Lorsque vous souhaitez récupérer des données. | `MATCH (n:Person) RETURN n` |
+| CREATE         | Utilisé pour créer des nœuds et des relations. | Lorsque vous souhaitez ajouter de nouvelles données. | `CREATE (n:Person {name: 'Alice'})` |
+| MERGE          | Combine MATCH et CREATE. Si le motif n'existe pas, il le crée. | Lorsque vous souhaitez éviter les doublons. | `MERGE (n:Person {name: 'Alice'})` |
+| RETURN         | Utilisé pour spécifier ce qui doit être retourné. | Après un MATCH ou un CREATE pour obtenir les résultats. | `MATCH (n:Person) RETURN n.name` |
+| DELETE         | Utilisé pour supprimer des nœuds et des relations. | Lorsque vous souhaitez supprimer des données. | `MATCH (n:Person {name: 'Alice'}) DELETE n` |
+| SET            | Utilisé pour mettre à jour les propriétés des nœuds et des relations. | Lorsque vous souhaitez modifier des données existantes. | `MATCH (n:Person {name: 'Alice'}) SET n.age = 30` |
+| REMOVE         | Utilisé pour supprimer des propriétés ou des étiquettes. | Lorsque vous souhaitez nettoyer des données. | `MATCH (n:Person {name: 'Alice'}) REMOVE n.age` |
+| WITH           | Utilisé pour chaîner des requêtes et passer des résultats intermédiaires. | Lorsque vous avez besoin de structurer des requêtes complexes. | `MATCH (n:Person) WITH n.name AS name RETURN name` |
+| ORDER BY       | Utilisé pour trier les résultats. | Lorsque vous souhaitez organiser les résultats. | `MATCH (n:Person) RETURN n ORDER BY n.name` |
+| LIMIT          | Utilisé pour limiter le nombre de résultats retournés. | Lorsque vous souhaitez restreindre les résultats. | `MATCH (n:Person) RETURN n LIMIT 10` |
