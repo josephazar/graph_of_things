@@ -121,3 +121,26 @@ MATCH (n) RETURN n
 - **Return all the Battery powered Things with the expected end date of their battery life:**
     ```cypher
     MATCH (n:Thing)-[r:IS_POWERED_BY]->(p:Power {id:"battery"}) return n.id as ThingId, n.lat as Lat, n.lon as Lon, apoc.date.format(r.lifefinish, 's', 'MM/dd/yyyy') as ExpectedBatteryFinish
+
+# IoT Monitoring and Fault Identification Queries
+
+## 1. Which Things are powered by solar and are overdue for inspection?
+
+## 2. Find Things that have been using LoRaWAN but have missing `appid` or `devid` properties in the relationship.
+
+## 3. Which sensors are showing faulty data, i.e., their values are outside the specified range for the sensor?
+
+## 4. Identify Things that are connected to multiple power sources, which may indicate a configuration error.
+
+## 5. List Things that are part of critical applications but have been offline (no sensor data) for a specific period (e.g., 1 day).
+
+## 6. Find Things that belong to the `Water Management` department but are not receiving data from any sensors.
+
+## 7. Which Things manufactured by `Libellium` are using outdated modules (e.g., module not updated in the last year)?
+
+## 8. Identify Things that are using multiple networks, which could indicate a misconfiguration.
+
+## 9. Find all sensors in a specific location (using latitude and longitude) that are outside their operational range.
+
+## 10. List all Things whose sensors report data inconsistencies (e.g., a temperature sensor showing extremely high or low values).
+
