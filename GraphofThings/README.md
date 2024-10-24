@@ -9,6 +9,8 @@ This tutorial and the accompanying data are inspired by the [Graph of Things pro
 The Graph of Things project offers an extensive framework for understanding complex interactions within an IoT ecosystem using Neo4j. This tutorial aims to simplify and highlight some of the basic concepts and queries useful for beginners or those new to graph databases.
 
 
+![Graph Visualization](images/graphofthingsnetwork.png)
+
 ## Node Labels
 
 In our Graph of Things model, we use the following node labels:
