@@ -1,2 +1,5 @@
 id,name
-gps,GPS
+gps,Module GPS
+wifi,Module WiFi
+bluetooth,Module Bluetooth
+camera,Module Caméra

@@ -1,3 +1,6 @@
 id,name
-battery,Battery
-solar,Solar
+batterie,Batterie
+solaire,Panneaux Solaires
+reseau,Réseau Électrique
+hydrogene,Pile à Hydrogène
+biomasse,Chaudière Biomasse

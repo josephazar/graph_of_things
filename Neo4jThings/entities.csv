@@ -1,18 +1,22 @@
 ﻿id,entType,name
-battery,Power,Battery
-solar,Power,Solar
+batterie,Power,Batterie
+solaire,Power,Panneaux Solaires
 lorawan,Network,LoRaWAN
 sigfox,Network,SigFox
 nbiot,Network,NB-IoT
 gprs,Network,GPRS
 gps,Module,GPS
-temperature,Sensor,Temperature
-heat,Sensor,Heat
-vendor1,Vendor,Vendor-1
-vendor2,Vendor,Vendor-2
-vendor3,Vendor,Vendor-3
+temperature,Sensor,Capteur Température
+humidite,Sensor,Capteur Humidité
+niveau_eau,Sensor,Niveau d'Eau
+luminosite,Sensor,Luminosité
+qualite_air,Sensor,Qualité Air
+vendor1,Vendor,EcoSolutions
+vendor2,Vendor,TechVert
+vendor3,Vendor,InnovEnergy
 libellium,Manufacturer,Libellium
 senra,Manufacturer,SenRa
-soilmoisture,Thingtype,Soil Moisture
-waterquality,Thingtype,Water Quality
-lightcontrol,Thingtype,Light Control
+qualite_eau,Thingtype,Qualité Eau
+eclairage,Thingtype,Éclairage Public
+chauffage,Thingtype,Système Chauffage
+energie,Thingtype,Monitoring Énergie

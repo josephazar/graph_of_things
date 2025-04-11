@@ -1,12 +1,16 @@
-id,name,lat,lon
-Thing01,Thing-01,-27.55165,152.7780303
-Thing02,Thing-02,-27.551136,152.7741683
-Thing03,Thing-03,-27.552125,152.7754883
-Thing04,Thing-04,-27.549309,152.7727093
-Thing05,Thing-05,-27.54637,152.7679243
-Thing06,Thing-06,-27.544353,152.7717223
-Thing07,Thing-07,-27.536724,152.7629913
-Thing08,Thing-08,-27.535744,152.7593433
-Thing09,Thing-09,-27.534574,152.7553633
-Thing10,Thing-10,-27.535493,152.7684423
-Thing11,Thing-11,-27.537424,152.7676163
+id,name,lat,lon,latest_value
+Capteur01,Température Mairie,47.51236,6.89453,"22.5°C"
+Capteur02,Luminosité École Primaire,47.51305,6.89521,"450 lux"
+Capteur03,Humidité École Maternelle,47.51323,6.89482,"43%"
+Capteur04,Température École Maternelle,47.51323,6.89482,"20.8°C"
+Capteur05,Qualité Air Salle des Fêtes,47.51278,6.89512,"97/100"
+Capteur06,Éclairage Place de la Poste,47.51198,6.89532,"ON"
+Capteur07,Consommation Smart Grid,47.51287,6.89467,"4.2 kWh"
+Capteur08,Production Panneaux Solaires,47.51266,6.89478,"2.8 kWh"
+Capteur09,Qualité Eau Réservoir,47.50998,6.89762,"Excellente"
+Capteur10,Éclairage Rue des Écoles,47.51301,6.89503,"OFF"
+Capteur11,Température Chaudière Biomasse,47.51240,6.89469,"65.3°C"
+Capteur12,Niveau Stockage Hydrogène,47.51263,6.89458,"72%"
+Capteur13,Consommation Ateliers Municipaux,47.51189,6.89562,"1.8 kWh"
+Capteur14,Détection Présence Parking Ombrières,47.51251,6.89498,"0"
+Capteur15,Niveau Cuve Récupération Eau,47.51315,6.89538,"83%"

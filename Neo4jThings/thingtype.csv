@@ -1,4 +1,7 @@
 id,name
-soilmoisture,Soil Moisture
-waterquality,Water Quality
-lightcontrol,Light Control
+qualite_eau,Qualité Eau
+eclairage,Éclairage Public
+chauffage,Système Chauffage
+energie,Monitoring Énergie
+meteo,Station Météo
+securite,Sécurité

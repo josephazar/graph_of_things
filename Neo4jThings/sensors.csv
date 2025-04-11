@@ -1,4 +1,16 @@
-id,entType,name
-temperature,Sensor,Temperature
-heat,Sensor,Heat
-infrared,,Infra Red
+id,entType,name,unit,description
+temperature,Sensor,Capteur Température,°C,Mesure de la température ambiante
+humidite,Sensor,Capteur Humidité,%,Mesure du taux d'humidité relative
+luminosite,Sensor,Capteur Luminosité,lux,Mesure de l'intensité lumineuse
+qualite_air,Sensor,Capteur Qualité Air,index,Indice de qualité de l'air (0-100)
+niveau_eau,Sensor,Capteur Niveau d'Eau,%,Mesure du niveau d'eau dans les cuves
+presence,Sensor,Détecteur Présence,booléen,Détection de présence par infrarouge
+consommation,Sensor,Compteur Énergie,kWh,Mesure de la consommation électrique
+production,Sensor,Compteur Production,kWh,Mesure de la production énergétique
+co2,Sensor,Capteur CO2,ppm,Mesure du taux de CO2
+pression,Sensor,Capteur Pression,hPa,Mesure de la pression atmosphérique
+infrarouge,Sensor,Capteur Infrarouge,booléen,Détection par rayonnement infrarouge
+porte,Sensor,Capteur d'Ouverture,booléen,Détection d'ouverture de porte/fenêtre
+pluviometre,Sensor,Pluviomètre,mm/h,Mesure des précipitations
+anemometre,Sensor,Anémomètre,km/h,Mesure de la vitesse du vent
+debit_eau,Sensor,Débitmètre,L/min,Mesure du débit d'eau
