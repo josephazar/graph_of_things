@@ -44,55 +44,55 @@ Also we have ten(10) edges (ie. Relationships). They are:
 2. **Things**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/things.csv" AS csvLine
-CREATE (`csvLine.id`:Thing {id: csvLine.id, name: csvLine.name, lat: csvLine.lat, lon: csvLine.lon })
+CREATE (`csvLine.identifier`:Thing {id: csvLine.identifier, name: csvLine.name, lat: csvLine.lat, lon: csvLine.lon })
 ```
 3. **Applications**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/applications.csv" AS csvLine
-CREATE (`csvLine.id`:Application{id: csvLine.id, name: csvLine.name})
+CREATE (`csvLine.identifier`:Application{id: csvLine.identifier, name: csvLine.name})
 ```
 4. **Manufacturers**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/manufacturers.csv" AS csvLine
-CREATE (`csvLine.id`:Manufacturer {id: csvLine.id, name: csvLine.name})
+CREATE (`csvLine.identifier`:Manufacturer {id: csvLine.identifier, name: csvLine.name})
 ```
 5. **Modules**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/module.csv" AS csvLine
-CREATE (`csvLine.id`:Module {id: csvLine.id, name: csvLine.name})
+CREATE (`csvLine.identifier`:Module {id: csvLine.identifier, name: csvLine.name})
 ```
 6. **Networks**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/network.csv" AS csvLine
-CREATE (`csvLine.id`:Network {id: csvLine.id, name: csvLine.name})
+CREATE (`csvLine.identifier`:Network {id: csvLine.identifier, name: csvLine.name})
 ```
 7. **Power Sources**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/power.csv" AS csvLine
-CREATE (`csvLine.id`:Power {id: csvLine.id, name: csvLine.name})
+CREATE (`csvLine.identifier`:Power {id: csvLine.identifier, name: csvLine.name})
 ```
 8. **Sensors**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/sensors.csv" AS csvLine
-CREATE (`csvLine.id`:Sensor {id: csvLine.id, name: csvLine.name})
+CREATE (`csvLine.identifier`:Sensor {id: csvLine.identifier, name: csvLine.name})
 ```
 9. **Thing Types**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/thingtype.csv" AS csvLine
-CREATE (`csvLine.id`:Thingtype {id: csvLine.id, name: csvLine.name})
+CREATE (`csvLine.identifier`:Thingtype {id: csvLine.identifier, name: csvLine.name})
 ```
 10. **Vendors**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/vendors.csv" AS csvLine
-CREATE (`csvLine.id`:Vendor {id: csvLine.id, name: csvLine.name})
+CREATE (`csvLine.identifier`:Vendor {id: csvLine.identifier, name: csvLine.name})
 ```
 11. **Departments and Locations**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/departments.csv" AS csvLine
-CREATE (`csvLine.id`:Department {id: csvLine.id, name: csvLine.name})
+CREATE (`csvLine.identifier`:Department {id: csvLine.identifier, name: csvLine.name})
 
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/locations.csv" AS row
-CREATE (l:Location {id: row.id, name: row.name});
+CREATE (l:Location {id: row.identifier, name: row.name});
 ```
 12. **Create Edges**
 ```sh
@@ -112,47 +112,47 @@ DETACH DELETE n;
 // Step 2: Load all node types
 // Create applications
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/applications.csv" AS row
-CREATE (a:Application {id: row.id, name: row.name});
+CREATE (a:Application {id: row.identifier, name: row.name});
 
 // Create departments
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/departments.csv" AS row
-CREATE (d:Department {id: row.id, name: row.name});
+CREATE (d:Department {id: row.identifier, name: row.name});
 
 // Create manufacturers
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/manufacturers.csv" AS row
-CREATE (m:Manufacturer {id: row.id, name: row.name});
+CREATE (m:Manufacturer {id: row.identifier, name: row.name});
 
 // Create modules
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/module.csv" AS row
-CREATE (m:Module {id: row.id, name: row.name});
+CREATE (m:Module {id: row.identifier, name: row.name});
 
 // Create networks
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/network.csv" AS row
-CREATE (n:Network {id: row.id, entType: row.entType, name: row.name});
+CREATE (n:Network {id: row.identifier, entType: row.entType, name: row.name});
 
 // Create power sources
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/power.csv" AS row
-CREATE (p:Power {id: row.id, name: row.name});
+CREATE (p:Power {id: row.identifier, name: row.name});
 
 // Create sensors
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/sensors.csv" AS row
-CREATE (s:Sensor {id: row.id, entType: row.entType, name: row.name, unit: row.unit, description: row.description});
+CREATE (s:Sensor {id: row.identifier, entType: row.entType, name: row.name, unit: row.unit, description: row.description});
 
 // Create things
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/things.csv" AS row
-CREATE (t:Thing {id: row.id, name: row.name, lat: toFloat(row.lat), lon: toFloat(row.lon), latest_value: row.latest_value});
+CREATE (t:Thing {id: row.identifier, name: row.name, lat: toFloat(row.lat), lon: toFloat(row.lon), latest_value: row.latest_value});
 
 // Create thing types
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/thingtype.csv" AS row
-CREATE (tt:ThingType {id: row.id, name: row.name});
+CREATE (tt:ThingType {id: row.identifier, name: row.name});
 
 // Create vendors
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/vendors.csv" AS row
-CREATE (v:Vendor {id: row.id, entType: row.entType, name: row.name});
+CREATE (v:Vendor {id: row.identifier, entType: row.entType, name: row.name});
 
 // Create locations
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/locations.csv" AS row
-CREATE (l:Location {id: row.id, name: row.name});
+CREATE (l:Location {id: row.identifier, name: row.name});
 
 // Step 3: Create all relationships
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/relation.csv" AS row
@@ -181,7 +181,7 @@ MATCH (n) RETURN n
 
 - **Return all the Battery powered Things with the expected end date of their battery life:**
     ```cypher
-    MATCH (n:Thing)-[r:IS_POWERED_BY]->(p:Power {id:"battery"}) return n.id as ThingId, n.lat as Lat, n.lon as Lon, apoc.date.format(r.lifefinish, 's', 'MM/dd/yyyy') as ExpectedBatteryFinish
+    MATCH (n:Thing)-[r:IS_POWERED_BY]->(p:Power {id:"battery"}) return n.identifier as ThingId, n.lat as Lat, n.lon as Lon, apoc.date.format(r.lifefinish, 's', 'MM/dd/yyyy') as ExpectedBatteryFinish
 
 # IoT Monitoring and Fault Identification Queries
 

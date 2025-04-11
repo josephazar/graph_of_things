@@ -1,4 +1,4 @@
-﻿id,entType,name
+﻿identifier,entType,name
 batterie,Power,Batterie
 solaire,Power,Panneaux Solaires
 lorawan,Network,LoRaWAN

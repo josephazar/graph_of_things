@@ -1,4 +1,4 @@
-id,entType,name,unit,description
+identifier,entType,name,unit,description
 temperature,Sensor,Capteur Température,°C,Mesure de la température ambiante
 humidite,Sensor,Capteur Humidité,%,Mesure du taux d'humidité relative
 luminosite,Sensor,Capteur Luminosité,lux,Mesure de l'intensité lumineuse

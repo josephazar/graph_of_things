@@ -1,4 +1,4 @@
-id,name,lat,lon,latest_value
+identifier,name,lat,lon,latest_value
 Capteur01,Température Mairie,47.51236,6.89453,"22.5°C"
 Capteur02,Luminosité École Primaire,47.51305,6.89521,"450 lux"
 Capteur03,Humidité École Maternelle,47.51323,6.89482,"43%"

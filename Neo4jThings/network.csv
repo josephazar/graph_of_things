@@ -1,4 +1,4 @@
-id,entType,name
+identifier,entType,name
 lorawan,Network,Réseau LoRaWAN
 sigfox,Network,Réseau SigFox
 nbiot,Network,NB-IoT

@@ -1,4 +1,4 @@
-id,name
+identifier,name
 gps,Module GPS
 wifi,Module WiFi
 bluetooth,Module Bluetooth
