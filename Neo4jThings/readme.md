@@ -94,8 +94,8 @@ CREATE (`csvLine.id`:Department {id: csvLine.id, name: csvLine.name})
 12. **Create Edges**
 ```sh
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/josephazar/graph_of_things/main/Neo4jThings/relation.csv" AS rels
-match (from {id:rels.thingId}), (to {id: rels.entityid})
-CALL apoc.create.relationship(from, rels.relationshipname,apoc.convert.fromJsonMap(rels.prop), to) YIELD rel 
+MATCH (from {id: rels.source}), (to {id: rels.target})
+CALL apoc.create.relationship(from, rels.relation, apoc.convert.fromJsonMap(rels.properties), to) YIELD rel 
 RETURN count(*)
 ```
 
